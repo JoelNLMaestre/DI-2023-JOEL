@@ -1,0 +1,14 @@
+C:\Users\joeln\source\repos\Exercise10\Exercise10\obj\Debug\net6.0\Exercise10.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joeln\source\repos\Exercise10\Exercise10\obj\Debug\net6.0\Exercise10.AssemblyInfoInputs.cache
+C:\Users\joeln\source\repos\Exercise10\Exercise10\obj\Debug\net6.0\Exercise10.AssemblyInfo.cs
+C:\Users\joeln\source\repos\Exercise10\Exercise10\obj\Debug\net6.0\Exercise10.csproj.CoreCompileInputs.cache
+C:\Users\joeln\source\repos\Exercise10\Exercise10\bin\Debug\net6.0\Exercise10.exe
+C:\Users\joeln\source\repos\Exercise10\Exercise10\bin\Debug\net6.0\Exercise10.deps.json
+C:\Users\joeln\source\repos\Exercise10\Exercise10\bin\Debug\net6.0\Exercise10.runtimeconfig.json
+C:\Users\joeln\source\repos\Exercise10\Exercise10\bin\Debug\net6.0\Exercise10.dll
+C:\Users\joeln\source\repos\Exercise10\Exercise10\bin\Debug\net6.0\Exercise10.pdb
+C:\Users\joeln\source\repos\Exercise10\Exercise10\obj\Debug\net6.0\Exercise10.dll
+C:\Users\joeln\source\repos\Exercise10\Exercise10\obj\Debug\net6.0\refint\Exercise10.dll
+C:\Users\joeln\source\repos\Exercise10\Exercise10\obj\Debug\net6.0\Exercise10.pdb
+C:\Users\joeln\source\repos\Exercise10\Exercise10\obj\Debug\net6.0\Exercise10.genruntimeconfig.cache
+C:\Users\joeln\source\repos\Exercise10\Exercise10\obj\Debug\net6.0\ref\Exercise10.dll
