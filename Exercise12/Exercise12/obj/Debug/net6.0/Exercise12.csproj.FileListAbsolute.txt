@@ -1,0 +1,14 @@
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\bin\Debug\net6.0\Exercise12.exe
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\bin\Debug\net6.0\Exercise12.deps.json
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\bin\Debug\net6.0\Exercise12.runtimeconfig.json
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\bin\Debug\net6.0\Exercise12.dll
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\bin\Debug\net6.0\Exercise12.pdb
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\obj\Debug\net6.0\Exercise12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\obj\Debug\net6.0\Exercise12.AssemblyInfoInputs.cache
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\obj\Debug\net6.0\Exercise12.AssemblyInfo.cs
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\obj\Debug\net6.0\Exercise12.csproj.CoreCompileInputs.cache
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\obj\Debug\net6.0\Exercise12.dll
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\obj\Debug\net6.0\refint\Exercise12.dll
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\obj\Debug\net6.0\Exercise12.pdb
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\obj\Debug\net6.0\Exercise12.genruntimeconfig.cache
+C:\Users\DAM02\source\repos\Exercise12\Exercise12\obj\Debug\net6.0\ref\Exercise12.dll
