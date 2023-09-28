@@ -69,7 +69,7 @@ public class Scores {
         double sum = 0;
         for (int i = 0; i < scores.Length; i++)
         {
-            sum = (Math.Pow(scores[i],2))-(Math.Pow(mean,2));
+            sum = (Math.Pow((mean-scores[i]), 2));
         }
         sum = Math.Sqrt(sum/scores.Length);
         return sum;

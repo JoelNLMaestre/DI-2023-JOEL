@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Exercise15\\Exercise15\\Exercise15.csproj": {}
+    "C:\\Users\\joeln\\source\\repos\\Exercise17\\Exercise17\\Exercise17.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Exercise15\\Exercise15\\Exercise15.csproj": {
+    "C:\\Users\\joeln\\source\\repos\\Exercise17\\Exercise17\\Exercise17.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Exercise15\\Exercise15\\Exercise15.csproj",
-        "projectName": "Exercise15",
-        "projectPath": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Exercise15\\Exercise15\\Exercise15.csproj",
+        "projectUniqueName": "C:\\Users\\joeln\\source\\repos\\Exercise17\\Exercise17\\Exercise17.csproj",
+        "projectName": "Exercise17",
+        "projectPath": "C:\\Users\\joeln\\source\\repos\\Exercise17\\Exercise17\\Exercise17.csproj",
         "packagesPath": "C:\\Users\\joeln\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Exercise15\\Exercise15\\obj\\",
+        "outputPath": "C:\\Users\\joeln\\source\\repos\\Exercise17\\Exercise17\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joeln\\AppData\\Roaming\\NuGet\\NuGet.Config",

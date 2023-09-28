@@ -1,0 +1,14 @@
+C:\Users\joeln\source\repos\Exercise17\Exercise17\obj\Debug\net6.0\Exercise17.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joeln\source\repos\Exercise17\Exercise17\obj\Debug\net6.0\Exercise17.AssemblyInfoInputs.cache
+C:\Users\joeln\source\repos\Exercise17\Exercise17\obj\Debug\net6.0\Exercise17.AssemblyInfo.cs
+C:\Users\joeln\source\repos\Exercise17\Exercise17\obj\Debug\net6.0\Exercise17.csproj.CoreCompileInputs.cache
+C:\Users\joeln\source\repos\Exercise17\Exercise17\bin\Debug\net6.0\Exercise17.exe
+C:\Users\joeln\source\repos\Exercise17\Exercise17\bin\Debug\net6.0\Exercise17.deps.json
+C:\Users\joeln\source\repos\Exercise17\Exercise17\bin\Debug\net6.0\Exercise17.runtimeconfig.json
+C:\Users\joeln\source\repos\Exercise17\Exercise17\bin\Debug\net6.0\Exercise17.dll
+C:\Users\joeln\source\repos\Exercise17\Exercise17\bin\Debug\net6.0\Exercise17.pdb
+C:\Users\joeln\source\repos\Exercise17\Exercise17\obj\Debug\net6.0\Exercise17.dll
+C:\Users\joeln\source\repos\Exercise17\Exercise17\obj\Debug\net6.0\refint\Exercise17.dll
+C:\Users\joeln\source\repos\Exercise17\Exercise17\obj\Debug\net6.0\Exercise17.pdb
+C:\Users\joeln\source\repos\Exercise17\Exercise17\obj\Debug\net6.0\Exercise17.genruntimeconfig.cache
+C:\Users\joeln\source\repos\Exercise17\Exercise17\obj\Debug\net6.0\ref\Exercise17.dll
