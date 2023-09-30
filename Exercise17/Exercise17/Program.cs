@@ -54,6 +54,10 @@
             case 'p':
                 printP();
                 break;
+            case 's':
+                printS();
+                break;
+
         }
 
     }
@@ -334,34 +338,39 @@
     }
     public static void printO()
     {
+        char[] car2 = { '1', '2', '3', '4', '5', '6', '7', '8' };
         char[] car = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
-        for (int i = 1;i <= 8;i++)
+        for (int i = 0;i < 8;i++)
         {
-            int c = 48;
-            car[i - 1] = (char)c;
+            car[i] = car2[i];
             for (int j=car.Length-1; j>=0; j--)
             {
                 Console.Write(car[j]);
             }
-            c++;
             Console.WriteLine("");
         }
     }
     public static void printP()
     {
-        char[] car = { '1', '2', '3', '4', '5', '6', '7', '8' };
-        for (int i = 0; i < car.Length; i++)
-        {
-            for (int j = car.Length-1; j >= 0; j--)
+        int lon = 8;
+        char[] car2 = { '1', '2', '3', '4', '5', '6', '7', '8' };
+        char[] car=car2;
+        while(lon>=1){
+            for (int j = car.Length - 1; j >= 0; j--)
             {
                 Console.Write(car[j]);
             }
-            for (int j = 0; j <= i; j++)
+            lon--;
+            car = new char[lon];
+            for (int j=0; j < lon; j++)
             {
-                Console.Write(" ");
+                car[j] = car2[j];
             }
-            car[car.Length - i - 1] = ' ';
             Console.WriteLine("");
         }
+    }
+    public static void printS()
+    {
+        
     }
 }
