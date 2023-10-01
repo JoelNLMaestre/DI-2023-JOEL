@@ -54,8 +54,8 @@
             case 'p':
                 printP();
                 break;
-            case 's':
-                printS();
+            default:
+                Console.WriteLine("the rest of the options are yet to be implemented");
                 break;
 
         }
@@ -358,7 +358,7 @@
         while(lon>=1){
             for (int j = car.Length - 1; j >= 0; j--)
             {
-                Console.Write(car[j]);
+                Console.Write(car[j]+" ");
             }
             lon--;
             car = new char[lon];
@@ -368,9 +368,5 @@
             }
             Console.WriteLine("");
         }
-    }
-    public static void printS()
-    {
-        
     }
 }
