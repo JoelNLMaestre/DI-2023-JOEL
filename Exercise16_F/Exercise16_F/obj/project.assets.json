@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Exercise15\\Exercise15\\Exercise15.csproj",
-      "projectName": "Exercise15",
-      "projectPath": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Exercise15\\Exercise15\\Exercise15.csproj",
+      "projectUniqueName": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\Exercise16_F.csproj",
+      "projectName": "Exercise16_F",
+      "projectPath": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\Exercise16_F.csproj",
       "packagesPath": "C:\\Users\\DAM02\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Exercise15\\Exercise15\\obj\\",
+      "outputPath": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DAM02\\AppData\\Roaming\\NuGet\\NuGet.Config",
