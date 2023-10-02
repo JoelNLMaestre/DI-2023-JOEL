@@ -24,5 +24,10 @@ namespace appPrueba
         {
             InitializeComponent();
         }
+
+        private void TabControl_SelectionChanged()
+        {
+
+        }
     }
 }

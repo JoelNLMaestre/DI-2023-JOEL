@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DAM02\\source\\repos\\appPrueba\\appPrueba\\appPrueba.csproj": {}
+    "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\appPrueba\\appPrueba\\appPrueba.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DAM02\\source\\repos\\appPrueba\\appPrueba\\appPrueba.csproj": {
+    "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\appPrueba\\appPrueba\\appPrueba.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DAM02\\source\\repos\\appPrueba\\appPrueba\\appPrueba.csproj",
+        "projectUniqueName": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\appPrueba\\appPrueba\\appPrueba.csproj",
         "projectName": "appPrueba",
-        "projectPath": "C:\\Users\\DAM02\\source\\repos\\appPrueba\\appPrueba\\appPrueba.csproj",
+        "projectPath": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\appPrueba\\appPrueba\\appPrueba.csproj",
         "packagesPath": "C:\\Users\\DAM02\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DAM02\\source\\repos\\appPrueba\\appPrueba\\obj\\",
+        "outputPath": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\appPrueba\\appPrueba\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DAM02\\AppData\\Roaming\\NuGet\\NuGet.Config",

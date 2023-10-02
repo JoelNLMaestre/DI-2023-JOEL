@@ -15,7 +15,8 @@
             <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
         <TabControl TabStripPlacement="Left" Grid.Row="1">
-            <TabItem Header="Home" FontSize="20"></TabItem>
+            <TabItem Header="Home" FontSize="20"></TabItem
+            <TabItem Header="Clients" FontSize="20"></TabItem>
         </TabControl>
     </Grid>
 </Window>
