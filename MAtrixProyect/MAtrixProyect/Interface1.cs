@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace MAtrixProyect
 {
-    public class Simulation
+    internal interface Interface1
     {
-        // to be implemented
+        public void print();
+        public void prompt();
+
+        public void Generate();
     }
 }

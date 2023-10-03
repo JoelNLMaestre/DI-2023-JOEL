@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joeln\\source\\repos\\MAtrixProyect\\MAtrixProyect\\MAtrixProyect.csproj",
+      "projectUniqueName": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\MAtrixProyect\\MAtrixProyect\\MAtrixProyect.csproj",
       "projectName": "MAtrixProyect",
-      "projectPath": "C:\\Users\\joeln\\source\\repos\\MAtrixProyect\\MAtrixProyect\\MAtrixProyect.csproj",
+      "projectPath": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\MAtrixProyect\\MAtrixProyect\\MAtrixProyect.csproj",
       "packagesPath": "C:\\Users\\joeln\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joeln\\source\\repos\\MAtrixProyect\\MAtrixProyect\\obj\\",
+      "outputPath": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\MAtrixProyect\\MAtrixProyect\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joeln\\AppData\\Roaming\\NuGet\\NuGet.Config",
