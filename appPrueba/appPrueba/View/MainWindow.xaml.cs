@@ -25,7 +25,7 @@ namespace appPrueba
             InitializeComponent();
         }
 
-        private void TabControl_SelectionChanged()
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
