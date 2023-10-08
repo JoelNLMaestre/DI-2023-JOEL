@@ -42,7 +42,7 @@ namespace MAtrixProyect
         {
             return this.city;
         }
-        public int getPdeath() { 
+        public int getPDeath() { 
             return this.pdeath;
         }
         public void setCell(int x, int y) {

@@ -53,9 +53,9 @@ namespace MAtrixProyect
 
 
         // methods to be implemented
-        public void characterTurn()
+        public void characterTurn(Character c)
         {
-            // to be implemented
+            c.setPDeath((c.getPDeath()+10));
         }
         public void smithTurn()
         {
