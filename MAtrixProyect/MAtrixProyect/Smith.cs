@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MAtrixProyect
 {
-    internal class Smith : Character
+    public class Smith : Character
     {
         int maxDeaths;
         public Smith(string name, Location city, int maxDeaths) : base(name, city)

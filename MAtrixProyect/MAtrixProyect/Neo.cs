@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MAtrixProyect
 {
-    internal class Neo : Character
+    public class Neo : Character
     {
         int perc;
         public Neo(string name, Location city, int perc) : base(name, city)

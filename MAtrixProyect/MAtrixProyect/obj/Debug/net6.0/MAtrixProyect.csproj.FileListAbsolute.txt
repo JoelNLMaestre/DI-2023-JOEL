@@ -1,0 +1,14 @@
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\bin\Debug\net6.0\MAtrixProyect.exe
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\bin\Debug\net6.0\MAtrixProyect.deps.json
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\bin\Debug\net6.0\MAtrixProyect.runtimeconfig.json
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\bin\Debug\net6.0\MAtrixProyect.dll
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\bin\Debug\net6.0\MAtrixProyect.pdb
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\obj\Debug\net6.0\MAtrixProyect.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\obj\Debug\net6.0\MAtrixProyect.AssemblyInfoInputs.cache
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\obj\Debug\net6.0\MAtrixProyect.AssemblyInfo.cs
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\obj\Debug\net6.0\MAtrixProyect.csproj.CoreCompileInputs.cache
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\obj\Debug\net6.0\MAtrixProyect.dll
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\obj\Debug\net6.0\refint\MAtrixProyect.dll
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\obj\Debug\net6.0\MAtrixProyect.pdb
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\obj\Debug\net6.0\MAtrixProyect.genruntimeconfig.cache
+C:\Users\joeln\source\repos\DI-2023-JOEL\MAtrixProyect\MAtrixProyect\obj\Debug\net6.0\ref\MAtrixProyect.dll

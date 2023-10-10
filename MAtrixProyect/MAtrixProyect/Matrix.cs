@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pathfinder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace MAtrixProyect
 {
-    internal class Matrix : Interface1
+    public class Matrix : Interface1
     {
         int cont;
-        Character[,] matrix;
-        Cell SmithCell;
-        Cell NeoCell;
+        public Character[,] matrix;
+        public Cell SmithCell;
+        public Cell NeoCell;
         public Matrix() { // this is the default constructor for the class matrix 
             this.matrix = new Character[5,5];
             this.cont = (5*5) - 2;
@@ -50,21 +51,26 @@ namespace MAtrixProyect
                 Console.WriteLine("the cordinates of the cell are not in the matrix, please try again");
             }
         }
-
-
-        // methods to be implemented
         public void characterTurn(Character c)
         {
-            c.setPDeath((c.getPDeath()+10));
+            c.setPDeath((c.getPDeath() + 10));
         }
-        public void smithTurn()
+        public int smithTurn(Smith s)
         {
-            // to be implemented
+            int ans;
+            ans = RandomNumber.random_Number(1, s.getmaxDeaths());
+            return ans;
         }
-        public void neoTurn()
+        public bool neoTurn(Neo n)
         {
-            // to be implemented
+            bool ans;
+            n.setPercent(RandomNumber.random_Number(1, 100));
+            ans = n.belive();
+            return ans;
         }
+
+        // methods to be implemented
+
         public void Generate()
         {
             throw new NotImplementedException();

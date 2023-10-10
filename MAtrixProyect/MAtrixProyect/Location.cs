@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MAtrixProyect
 {
-    internal class Location
+    public class Location
     {
         int lat;
         int lon;

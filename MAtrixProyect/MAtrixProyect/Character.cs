@@ -8,14 +8,14 @@ using Pathfinder;
 
 namespace MAtrixProyect
 {
-    internal class Character : Interface1
+    public class Character : Interface1
     {
         String name;
         Location city;
         int pdeath;
         Cell cell;
-        readonly static String[] CITIES = {"New York","Boston",  "Baltimore", "Atlanta", "Detroit","Dallas","Denver"};
-        readonly static String[] NAMES = { "Michelle", "Alexander", "James", "Caroline", "Claire", "Jessica", "Erik","Mike" };
+        public readonly static String[] CITIES = {"New York","Boston",  "Baltimore", "Atlanta", "Detroit","Dallas","Denver"};
+        public readonly static String[] NAMES = { "Michelle", "Alexander", "James", "Caroline", "Claire", "Jessica", "Erik","Mike" };
         public Character(String name, Location city)
         {
             this.name = name;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MAtrixProyect
 {
-    internal class Cell
+    public class Cell
     {
         int x;
         int y;
