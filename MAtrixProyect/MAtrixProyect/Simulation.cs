@@ -67,17 +67,394 @@ namespace MAtrixProyect
             // making test
             printMatrix(matriz);
             Console.WriteLine("Distance between neo and smith :" + CalculateDistance(cellsmith, cellneo));
+
+            // simulation initialization
+            int max_time = 20;
+            int time = 1;
+            bool stillcharacters = true; // controls if there is still characters in the queue
+            bool fin = false; // controls if smith has caugth Neo;
+            do
+            {
+
+                // characteres turn
+                if (time % 1 == 0)
+                {
+                    // check for characters about to die and remove them
+                    // if not reday to die, then the character's death percentage is increased
+                    smith.setPDeath(0);
+                    neo.setPDeath(0);
+                    Console.WriteLine("Character turn");
+                    stillcharacters = characTurn(characters, matriz, stillcharacters);
+                }
+                // smith's turn
+                if (time % 2 == 0)
+                {
+                    Console.WriteLine("smith's turn");
+                    fin = smithTurn(matriz, smith, characters);
+                    printMatrix(matriz);
+                }
+                // neo's turn
+                if (time % 5 == 0)
+                    Console.WriteLine("Every 5 seconds");
+
+                // wait 1 second
+                Thread.Sleep(1000);
+                time += 1;
+            } while (time <= max_time && fin == false);
+
+            if (time == 21)
+            {
+                Console.WriteLine("the game has run out of time");
+                Console.WriteLine(matriz.cont);
+            }
+            else
+            {
+                Console.WriteLine("Smith has captured Neo, the simulation has ended");
+            }
         }
 
 
+        /**
+         * changes the death percentage of the characters in the matrix and checks if the percentage is over 70 percent
+         * if thats the case the character is replaced with another one from the queue
+         * @param the queue where are the characters and the matrix where are needed to be used
+        */
+        public static bool characTurn(Queue<Character> characters, Matrix matriz, bool stillcharacters)
+        {
+            bool ans = true;
+            try
+            {
+                
+                for (int i = 0; i < matriz.matrix.GetLength(0); i++)
+                {
+                    for (int j = 0; j < matriz.matrix.GetLength(1); j++)
+                    {
+                        if (matriz.matrix[i, j] is Character && matriz.matrix[i, j].getPDeath() <= 70)
+                        {
+                            matriz.characterTurn(matriz.matrix[i, j]); // increase the death percentage
+                        }
+                        else if (matriz.matrix[i, j] is Character && matriz.matrix[i, j].getPDeath() > 70)
+                        {
+                            matriz.matrix[i, j] = characters.Dequeue();
+                            matriz.cont += 1;
+                        }else if(stillcharacters == false)
+                        {
+                            matriz.matrix[i, j] = null;
+                        }
+                    }
+                }
+            }catch(InvalidOperationException ioe) // controling the queue, if run out of characters the exception will prohibit the using of the queue
+            {
+                ans = false;
+            }
+            return ans;
+        }
+        /**
+         * method to calcualte teh turn of smith, it will change the position of the agent and end the game if he reaches Neo
+         * @param the matrix for the simulation and agent smith
+         * @return true if the agent is in reach of Neo, otherwise false
+         */
+        public static bool smithTurn(Matrix matriz, Smith smith, Queue<Character> characters)
+        {
+            bool ans = false;
+            int kills;
+            kills = matriz.smithTurn(smith) ;
+            if (checkForNeo(matriz))
+            {
+                ans = true;
+            }
+            smithMovement(matriz, smith, characters);
+            return ans;
+        }
 
+        /**
+         * this method checks if Neo is in range form smith to capture/kill him
+         * @param the matrix where the simulation is being computated
+         * @return true if Neo is in range, false otherwise
+         */
+        private static bool checkForNeo(Matrix matriz)
+        {
+            bool ans = false;
+            if (si(matriz) || sd(matriz) || ii(matriz) || id(matriz))
+            {
+                ans = true;
+            }
+            return ans;
+        }
+        /** this methods checks if Neo is in range from Smith tom be caugth
+         * @param the matrix to be checked
+         * @return true if neo is in range, otherwise false
+         */
+        private static bool si(Matrix matriz)
+        {
+            bool ans = false;
+            try
+            {
+                if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Neo))
+                    ans = true; 
+            }catch(IndexOutOfRangeException iore)
+            {
+                ans = false;
+            }
+            return ans;
+        }
+        /** this methods checks if Neo is in range from Smith tom be caugth
+         * @param the matrix to be checked
+         * @return true if neo is in range, otherwise false
+         */
+        private static bool sd(Matrix matriz)
+        {
+            bool ans = false;
+            try
+            {
+                if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() + 1].GetType() == typeof(Neo))
+                    ans = true;
+            }
+            catch (IndexOutOfRangeException iore)
+            {
+                ans = false;
+            }
+            return ans;
+        }
+        /** this methods checks if Neo is in range from Smith tom be caugth
+         * @param the matrix to be checked
+         * @return true if neo is in range, otherwise false
+         */
+        private static bool ii(Matrix matriz)
+        {
+            bool ans = false;
+            try
+            {
+                if (matriz.matrix[matriz.SmithCell.getX() + 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Neo))
+                    ans = true;
+            }
+            catch (IndexOutOfRangeException iore)
+            {
+                ans = false;
+            }
+            return ans;
+        }
+        /** this methods checks if Neo is in range from Smith tom be caugth
+         * @param the matrix to be checked
+         * @return true if neo is in range, otherwise false
+         */
+        private static bool id(Matrix matriz)
+        {
+            bool ans = false;
+            try
+            {
+                if (matriz.matrix[matriz.SmithCell.getX() + 1, matriz.SmithCell.getY() + 1].GetType() == typeof(Neo))
+                    ans = true;
+            }
+            catch (IndexOutOfRangeException iore)
+            {
+                ans = false;
+            }
+            return ans;
+        }
+        /**
+         * method to calculate teh movement of the agent smith
+         * @param the matrix and the agent smith
+         */
+        public static void smithMovement(Matrix matriz, Smith smith, Queue<Character> characters)
+        {
+            matriz.matrix[(matriz.SmithCell.getX()), (matriz.SmithCell.getY())] = characters.Dequeue();
+            matriz.cont++;
+            if ((matriz.NeoCell.getX() - matriz.SmithCell.getX()) < 0)
+            {
+                matriz.SmithCell.setX((matriz.SmithCell.getX() - 1));
+            }
+            else if ((matriz.NeoCell.getX() - matriz.SmithCell.getX()) > 0)
+            {
+                matriz.SmithCell.setX((matriz.SmithCell.getX() + 1));
+            }
+            else if ((matriz.NeoCell.getX() - matriz.SmithCell.getX()) == 0)
+            {
+                String ans = "";
+                if (siSM(matriz))
+                    ans += "a";
+                if (sdSM(matriz))
+                    ans += "b";
+                if (iiSM(matriz))
+                    ans += "c";
+                if (idSM(matriz))
+                    ans += "d";
+                int num = RandomNumber.random_Number(0, 100);
+                switch (ans)
+                {
+                    case "a":
+                        matriz.SmithCell.setX((matriz.SmithCell.getX() - 1));
+                        break;
+                    case "b":
+                        matriz.SmithCell.setX((matriz.SmithCell.getX() - 1));
+                        break;
+                    case "c":
+                        matriz.SmithCell.setX((matriz.SmithCell.getX() + 1));
+                        break;
+                    case "d":
+                        matriz.SmithCell.setX((matriz.SmithCell.getX() + 1));
+                        break;
+                    case "ab":
+                        matriz.SmithCell.setX((matriz.SmithCell.getX() - 1));
+                        break;
+                    case "cd":
+                        matriz.SmithCell.setX((matriz.SmithCell.getX() + 1));
+                        break;
+                    default:
+                        if (num < 51)
+                        {
+                            matriz.SmithCell.setX((matriz.SmithCell.getX() + 1));
+                        }
+                        else
+                        {
+                            matriz.SmithCell.setX((matriz.SmithCell.getX() - 1));
+                        }
+                        break;
+                }
+            }
 
+            if ((matriz.NeoCell.getY() - matriz.SmithCell.getY()) < 0)
+            {
+                matriz.SmithCell.setY((matriz.SmithCell.getY() - 1));
+            }
+            else if ((matriz.NeoCell.getY() - matriz.SmithCell.getY()) > 0)
+            {
+                matriz.SmithCell.setY((matriz.SmithCell.getY() + 1));
+            }
+            else if ((matriz.NeoCell.getY() - matriz.SmithCell.getY()) == 0)
+            {
+                String ans = "";
+                int num = RandomNumber.random_Number(0, 100);
+                if (siSM(matriz))
+                    ans += "a";
+                if (sdSM(matriz))
+                    ans += "b";
+                if (iiSM(matriz))
+                    ans += "c";
+                if (idSM(matriz))
+                    ans += "d";
+                switch (ans)
+                {
+                    case "a":
+                        matriz.SmithCell.setY((matriz.SmithCell.getY() - 1));
+                        break;
+                    case "b":
+                        matriz.SmithCell.setY((matriz.SmithCell.getY() + 1));
+                        break;
+                    case "c":
+                        matriz.SmithCell.setY((matriz.SmithCell.getY() - 1));
+                        break;
+                    case "d":
+                        matriz.SmithCell.setY((matriz.SmithCell.getY() + 1));
+                        break;
+                    case "ac":
+                        matriz.SmithCell.setY((matriz.SmithCell.getY() - 1));
+                        break;
+                    case "bd":
+                        matriz.SmithCell.setY((matriz.SmithCell.getY() + 1));
+                        break;
+                    default:
+                        if (num < 51)
+                        {
+                            matriz.SmithCell.setY((matriz.SmithCell.getY() + 1));
+                        }
+                        else
+                        {
+                            matriz.SmithCell.setY((matriz.SmithCell.getY() - 1));
+                        }
+                        break;
+                }
+            }
+            matriz.matrix[(matriz.SmithCell.getX()), (matriz.SmithCell.getY())] = smith;
+        }
+        /** this methods checks if Smith can move to the left superior side
+         * @param the matrix to be checked
+         * @return true if smith can move, otherwise false
+         */
+        private static bool siSM(Matrix matriz)
+        {
+            bool ans = false;
+            try
+            {
+                if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Character))
+                    ans = true;
+            }
+            catch (IndexOutOfRangeException iore)
+            {
+                ans = false;
+            }
+            return ans;
+        }
+        /** this methods checks if Smith can move to the right superior side
+         * @param the matrix to be checked
+         * @return true if smith can move, otherwise false
+         */
+        private static bool sdSM(Matrix matriz)
+        {
+            bool ans = false;
+            try
+            {
+                if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() + 1].GetType() == typeof(Character))
+                    ans = true;
+            }
+            catch (IndexOutOfRangeException iore)
+            {
+                ans = false;
+            }
+            return ans;
+        }
+        /** this methods checks if Smith can move to the left inferior side
+         * @param the matrix to be checked
+         * @return true if smith can move, otherwise false
+         */
+        private static bool iiSM(Matrix matriz)
+        {
+            bool ans = false;
+            try
+            {
+                if (matriz.matrix[matriz.SmithCell.getX() + 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Character))
+                    ans = true;
+            }
+            catch (IndexOutOfRangeException iore)
+            {
+                ans = false;
+            }
+            return ans;
+        }
+        /** this methods checks if Smith can move to the right inferior side
+         * @param the matrix to be checked
+         * @return true if smith can move, otherwise false
+         */
+        private static bool idSM(Matrix matriz)
+        {
+            bool ans = false;
+            try
+            {
+                if (matriz.matrix[matriz.SmithCell.getX() + 1, matriz.SmithCell.getY() + 1].GetType() == typeof(Character))
+                    ans = true;
+            }
+            catch (IndexOutOfRangeException iore)
+            {
+                ans = false;
+            }
+            return ans;
+        }
+        /**
+         * method used to calculate the distance between Neo and smith
+         * @param the Cells where Neo and Smith are in each moment of the simulation
+         * @return the number of steps between Neo and Smith
+         */
         public static int CalculateDistance(Cell cells, Cell celln)
         {
             int ans;
             ans = Maximum(Absolute(celln.getY(), cells.getY()), Absolute(celln.getX(), cells.getX()));
             return ans;
         }
+        /**
+         * method use to calculate the absolute value of a subtraction
+         * @param the numbers used in the subtraction
+         * @return the absolute value of the subtraction result
+         */
         static int Absolute(int a, int b)
         {
             int ans = a - b;
@@ -86,6 +463,11 @@ namespace MAtrixProyect
             }
             return ans;
         }
+        /**
+         * method used to calculate the greater number of a couple
+         * @param the number that are needed to be compared
+         * @return the greater number of the two
+         */
         static int Maximum(int a, int b)
         {
             int ans = b;
@@ -95,23 +477,31 @@ namespace MAtrixProyect
             }
             return ans;
         }
+        /**
+         * methjod to print the matrix in a determined moment 
+         * @param the matrix to be printed
+         */
         public static void printMatrix(Matrix matriz)
         {
             for(int i=0; i < matriz.matrix.GetLength(0); i++)
             {
                 for (int j=0; j<matriz.matrix.GetLength(1); j++)
                 {
-                    if (matriz.matrix[i, j].GetType() == typeof(Character))
+                    if (matriz.matrix[i, j].GetType() ==  typeof(Character) && matriz.matrix[i, j] != null)
                     {
                         Console.Write("C ");
                     }
-                    if (matriz.matrix[i, j].GetType() == typeof(Neo))
+                    if (matriz.matrix[i, j].GetType() == typeof(Neo) && matriz.matrix[i, j] != null)
                     {
                         Console.Write("N ");
                     }
-                    if (matriz.matrix[i, j].GetType() == typeof(Smith))
+                    if (matriz.matrix[i, j].GetType() == typeof(Smith) && matriz.matrix[i, j] != null)
                     {
                         Console.Write("S ");
+                    }
+                    if (matriz.matrix[i, j].GetType() == typeof(Character) && matriz.matrix[i, j] == null )
+                    {
+                        Console.Write("  ");
                     }
                 }
                 Console.WriteLine();

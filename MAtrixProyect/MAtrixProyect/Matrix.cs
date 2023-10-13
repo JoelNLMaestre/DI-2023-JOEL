@@ -9,7 +9,7 @@ namespace MAtrixProyect
 {
     public class Matrix : Interface1
     {
-        int cont;
+        public int cont;
         public Character[,] matrix;
         public Cell SmithCell;
         public Cell NeoCell;
