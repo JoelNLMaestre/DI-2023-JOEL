@@ -18,14 +18,14 @@ namespace MAtrixProyect
             this.cont = (5*5) - 2;
         }
         public Matrix(int rows, int columns) {
-            if (rows > 4 && columns > 4)
+            if ((rows > 4 && columns > 4) && (rows < 14 && columns < 14))
             {
                 this.matrix = new Character[rows, columns];
                 this.cont = (rows * columns) - 2;
             }
             else
             {
-                Console.WriteLine("the matrix have to be composed of at least 5 rows and 5 columns");
+                Console.WriteLine("the matrix have to be composed of at least 5 rows and 5 columns and a maximum of 13 rows and 13 columns");
             }
         }
 

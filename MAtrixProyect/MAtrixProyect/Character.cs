@@ -22,6 +22,12 @@ namespace MAtrixProyect
             this.city = city;
             this.pdeath = RandomNumber.random_Number(0,100);
         }
+        public Character(String name, Location city, int pdeath)
+        {
+            this.name = name;
+            this.city = city;
+            this.pdeath = pdeath;
+        }
         public void setName(String name)
         {
             this.name = name;
