@@ -57,9 +57,7 @@ namespace MAtrixProyect
         }
         public int smithTurn(Smith s)
         {
-            int ans;
-            ans = RandomNumber.random_Number(1, s.getmaxDeaths());
-            return ans;
+            return s.infectThisTurn();
         }
         public bool neoTurn(Neo n)
         {

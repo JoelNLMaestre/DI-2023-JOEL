@@ -70,7 +70,7 @@ namespace MAtrixProyect
             int max_time = 20;
             int time = 1;
             bool stillcharacters = true; // controls if there is still characters in the queue
-            bool fin = false; // controls if smith has caugth Neo;
+            bool fin = false; // controls if Smith has caugth Neo;
             do
             {
 
@@ -95,7 +95,7 @@ namespace MAtrixProyect
                 if (time % 5 == 0)
                 {
                     Console.WriteLine("Neo's turn");
-                    neoTurn(matriz, neo, characters);
+                    neoTurn(matriz, neo, characters,stillcharacters);
                 }
                 // wait 1 second
                 Thread.Sleep(1000);
@@ -123,7 +123,7 @@ namespace MAtrixProyect
             Matrix ans;
             try
             {
-                Console.WriteLine("how many row do you want in the matrix?");
+                Console.WriteLine("how many rows do you want in the matrix?");
                 String rows = Console.ReadLine();
                 Console.WriteLine("how many columns do you want in the matrix?");
                 String columns = Console.ReadLine();
@@ -192,381 +192,68 @@ namespace MAtrixProyect
             smithMovement(matriz, smith, characters);
             return ans;
         }
-        /**
-         * method to calcualte neo's turn, also it will change the position of him
-         * @param the matrix for the simulation, Neo and the queue of characters
-         * @return true if the agent is in reach of Neo, otherwise false
-         */
-        public static void neoTurn(Matrix matriz, Neo neo, Queue<Character> characters)
-        {
-            bool belive = matriz.neoTurn(neo) ;
-            if (belive)
-            {
-                changeAdjacentCharac(matriz, characters);
-            }
-            int num = RandomNumber.random_Number(1, 8);
-            neoMovement(matriz, num, characters, neo);
-        }
 
-
-
-
-
-
-        // NEO'S MOVEMENT METHODS
-
+        // Neo's calculation and methods 
 
         /**
-         * this method changes the adjacent characters and if posible (position in null) it change them for new ones
-         * @param the matrix and the queue of characters to import new ones
+         * this method calculate the position for neo tu move, and if he belives is the one or not
+         * @param the matrix, neo, a queue of characters and de boolean to control the queue
          */
-        private static void changeAdjacentCharac(Matrix matriz, Queue<Character> characters)
+        public static void neoTurn(Matrix matriz, Neo neo, Queue<Character> q, bool charactersLeft)
         {
-            for(int i = 0; i < 8;i++)
+            bool isBelieved = matriz.neoTurn(neo);
+            int rows = matriz.NeoCell.getX();
+            int columns = matriz.NeoCell.getY();
+
+            if (isBelieved)
             {
-                switch (i)
+                for (int i = -1; i <= 1; i++)
                 {
-                    case 0:
-                        if (siNM(matriz))
+                    for (int j = -1; j <= 1; j++)
+                    {
+                        if (checkPosition(i, j, matriz) && charactersLeft == true)
                         {
-                            if(matriz.matrix[matriz.NeoCell.getX() - 1, matriz.NeoCell.getY() - 1] == null)
-                            {
-                                matriz.matrix[matriz.NeoCell.getX() - 1, matriz.NeoCell.getY() - 1] = characters.Dequeue();
-                            }
+                            matriz.matrix[matriz.NeoCell.getX() + i, matriz.NeoCell.getY() + j] = q.Dequeue();
                         }
-                        break;
-                    case 1:
-                        if (sdNM(matriz))
-                        {
-                            if (matriz.matrix[matriz.NeoCell.getX() - 1, matriz.NeoCell.getY() + 1] == null)
-                            {
-                                matriz.matrix[matriz.NeoCell.getX() - 1, matriz.NeoCell.getY() + 1] = characters.Dequeue();
-                            }
-                        }
-                        break;
-                    case 2:
-                        if (iiNM(matriz))
-                        {
-                            if (matriz.matrix[matriz.NeoCell.getX() + 1, matriz.NeoCell.getY() - 1] == null)
-                            {
-                                matriz.matrix[matriz.NeoCell.getX() + 1, matriz.NeoCell.getY() - 1] = characters.Dequeue();
-                            }
-                        }
-                        break;
-                    case 3:
-                        if (idNM(matriz))
-                        {
-                            if (matriz.matrix[matriz.NeoCell.getX() + 1, matriz.NeoCell.getY() + 1] == null)
-                            {
-                                matriz.matrix[matriz.NeoCell.getX() + 1, matriz.NeoCell.getY() + 1] = characters.Dequeue();
-                            }
-                        }
-                        break;
-                    case 4:
-                        if (arribaNM(matriz))
-                        {
-                            if (matriz.matrix[matriz.NeoCell.getX() - 1, matriz.NeoCell.getY()] == null)
-                            {
-                                matriz.matrix[matriz.NeoCell.getX() - 1, matriz.NeoCell.getY()] = characters.Dequeue();
-                            }
-                        }
-                        break;
-                    case 5:
-                        if (abajoNM(matriz))
-                        {
-                            if (matriz.matrix[matriz.NeoCell.getX() + 1, matriz.NeoCell.getY()] == null)
-                            {
-                                matriz.matrix[matriz.NeoCell.getX() + 1, matriz.NeoCell.getY()] = characters.Dequeue();
-                            }
-                        }
-                        break;
-                    case 6:
-                        if (izqNM(matriz))
-                        {
-                            if (matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY() - 1] == null)
-                            {
-                                matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY() - 1] = characters.Dequeue();
-                            }
-                        }
-                        break;
-                    case 7:
-                        if (derchNM(matriz))
-                        {
-                            if (matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY() + 1] == null)
-                            {
-                                matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY() + 1] = characters.Dequeue();
-                            }
-                        }
-                        break;
+                    }
                 }
             }
+
+            int r1 = RandomNumber.random_Number(0, matriz.matrix.GetLength(0) - 1);
+            int r2 = RandomNumber.random_Number(0, matriz.matrix.GetLength(1) - 1);
+            matriz.NeoCell.setX(r1);
+            matriz.NeoCell.setY(r2);
+
+            if (matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()] is Character)
+            {
+                Character characterAux = matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()];
+                matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()] = neo;
+                matriz.matrix[rows, columns] = characterAux;
+            }
+
         }
         /**
-         * this method calculates the movement of Neo, 
-         * @param the matrix, queue and the object Neo, IMPORTANT -> int num is used to calculate whether it is posible to move 
-         * to one space or not
+         * this methods calculate whether the popsition to wheer neo is pointing is available/exist or not
+         * @param the rows and columns where neo wants to check, and the matrix
+         * @return true if the position is available, false otherwise
          */
-        private static void neoMovement(Matrix matriz, int num, Queue<Character> characters, Neo neo)
+        public static bool checkPosition(int rows, int columns, Matrix matriz)
         {
-            switch (num) {
-                case 1:
-                    if (siNM(matriz))
-                    {
-                        matriz.NeoCell.setX(matriz.NeoCell.getX() - 1);
-                        matriz.NeoCell.setY(matriz.NeoCell.getY() - 1);
-                        Character aux = matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()];
-                        matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()] = neo;
-                        matriz.matrix[matriz.NeoCell.getX()+1, matriz.NeoCell.getY()+1] = aux;
-                    }
-                    else
-                    {
-                        neoMovement(matriz, RandomNumber.random_Number(1, 8), characters, neo);
-                    }
-                    break;
-                case 2:
-                    if (sdNM(matriz))
-                    {
-                        matriz.NeoCell.setX(matriz.NeoCell.getX() - 1);
-                        matriz.NeoCell.setY(matriz.NeoCell.getY() + 1);
-                        Character aux = matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()];
-                        matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()] = neo;
-                        matriz.matrix[matriz.NeoCell.getX() + 1, matriz.NeoCell.getY() - 1] = aux;
-                    }
-                    else
-                    {
-                        neoMovement(matriz, RandomNumber.random_Number(1, 8), characters, neo);
-                    }
-                    break;
-                case 3:
-                    if (iiNM(matriz))
-                    {
-                        matriz.NeoCell.setX(matriz.NeoCell.getX() + 1);
-                        matriz.NeoCell.setY(matriz.NeoCell.getY() - 1);
-                        Character aux = matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()];
-                        matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()] = neo;
-                        matriz.matrix[matriz.NeoCell.getX() - 1, matriz.NeoCell.getY() + 1] = aux;
-                    }
-                    else
-                    {
-                        neoMovement(matriz, RandomNumber.random_Number(1, 8), characters, neo);
-                    }
-                    break;
-                case 4:
-                    if (idNM(matriz))
-                    {
-                        matriz.NeoCell.setX(matriz.NeoCell.getX() + 1);
-                        matriz.NeoCell.setY(matriz.NeoCell.getY() + 1);
-                        Character aux = matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()];
-                        matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()] = neo;
-                        matriz.matrix[matriz.NeoCell.getX() - 1, matriz.NeoCell.getY() - 1] = aux;
-                    }
-                    else
-                    {
-                        neoMovement(matriz, RandomNumber.random_Number(1, 8), characters, neo);
-                    }
-                    break;
-                case 5:
-                    if (arribaNM(matriz))
-                    {
-                        matriz.NeoCell.setX(matriz.NeoCell.getX() - 1);
-                        matriz.NeoCell.setY(matriz.NeoCell.getY());
-                        Character aux = matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()];
-                        matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()] = neo;
-                        matriz.matrix[matriz.NeoCell.getX() + 1, matriz.NeoCell.getY()] = aux;
-                    }
-                    else
-                    {
-                        neoMovement(matriz, RandomNumber.random_Number(1, 8), characters, neo);
-                    }
-                    break;
-                case 6:
-                    if (abajoNM(matriz))
-                    {
-                        matriz.NeoCell.setX(matriz.NeoCell.getX() + 1);
-                        matriz.NeoCell.setY(matriz.NeoCell.getY());
-                        Character aux = matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()];
-                        matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()] = neo;
-                        matriz.matrix[matriz.NeoCell.getX() - 1, matriz.NeoCell.getY()] = aux;
-                    }
-                    else
-                    {
-                        neoMovement(matriz, RandomNumber.random_Number(1, 8), characters, neo);
-                    }
-                    break;
-                case 7:
-                    if (izqNM(matriz))
-                    {
-                        matriz.NeoCell.setX(matriz.NeoCell.getX());
-                        matriz.NeoCell.setY(matriz.NeoCell.getY() - 1);
-                        Character aux = matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()];
-                        matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()] = neo;
-                        matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY() + 1] = aux;
-                    }
-                    else
-                    {
-                        neoMovement(matriz, RandomNumber.random_Number(1, 8), characters, neo);
-                    }
-                    break;
-                case 8:
-                    if (derchNM(matriz))
-                    {
-                        matriz.NeoCell.setX(matriz.NeoCell.getX());
-                        matriz.NeoCell.setY(matriz.NeoCell.getY() + 1);
-                        Character aux = matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()];
-                        matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY()] = neo;
-                        matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY() - 1] = aux;
-                    }
-                    else
-                    {
-                        neoMovement(matriz, RandomNumber.random_Number(1, 8), characters, neo);
-                    }
-                    break;
-            }
-        }
+            bool answer = false;
+            try
+            {
+                if (matriz.matrix[matriz.NeoCell.getX() + rows, matriz.NeoCell.getY() + columns].GetType() == typeof(Character))
+                {
+                    answer = true;
+                }
 
-        /** this methods checks if Neo can move to the left superior side
-         * @param the matrix to be checked
-         * @return true if Neo can move, otherwise false
-         */
-        private static bool siNM(Matrix matriz)
-        {
-            bool ans = false;
-            try
-            {
-                if (matriz.matrix[matriz.NeoCell.getX() - 1, matriz.NeoCell.getY() - 1].GetType() == typeof(Character))
-                    ans = true;
             }
-            catch (IndexOutOfRangeException iore)
+            catch (IndexOutOfRangeException iob)
             {
-                ans = false;
+                answer = false;
             }
-            return ans;
-        }
-        /** this methods checks if Neo can move to the right superior side
-         * @param the matrix to be checked
-         * @return true if Neo can move, otherwise false
-         */
-        private static bool sdNM(Matrix matriz)
-        {
-            bool ans = false;
-            try
-            {
-                if (matriz.matrix[matriz.NeoCell.getX() - 1, matriz.NeoCell.getY() + 1].GetType() == typeof(Character))
-                    ans = true;
-            }
-            catch (IndexOutOfRangeException iore)
-            {
-                ans = false;
-            }
-            return ans;
-        }
-        /** this methods checks if Neo can move to the left inferior side
-         * @param the matrix to be checked
-         * @return true if Neo can move, otherwise false
-         */
-        private static bool iiNM(Matrix matriz)
-        {
-            bool ans = false;
-            try
-            {
-                if (matriz.matrix[matriz.NeoCell.getX() + 1, matriz.NeoCell.getY() - 1].GetType() == typeof(Character))
-                    ans = true;
-            }
-            catch (IndexOutOfRangeException iore)
-            {
-                ans = false;
-            }
-            return ans;
-        }
-        /** this methods checks if Neo can move to the right inferior side
-         * @param the matrix to be checked
-         * @return true if Neo can move, otherwise false
-         */
-        private static bool idNM(Matrix matriz)
-        {
-            bool ans = false;
-            try
-            {
-                if (matriz.matrix[matriz.NeoCell.getX() + 1, matriz.NeoCell.getY() + 1].GetType() == typeof(Character))
-                    ans = true;
-            }
-            catch (IndexOutOfRangeException iore)
-            {
-                ans = false;
-            }
-            return ans;
-        }
-        /** this methods checks if Neo can move to the inmediate superior side
-        * @param the matrix to be checked
-        * @return true if Neo can move, otherwise false
-        */
-        private static bool arribaNM(Matrix matriz)
-        {
-            bool ans = false;
-            try
-            {
-                if (matriz.matrix[matriz.NeoCell.getX() - 1, matriz.NeoCell.getY()].GetType() == typeof(Character))
-                    ans = true;
-            }
-            catch (IndexOutOfRangeException iore)
-            {
-                ans = false;
-            }
-            return ans;
-        }
-        /** this methods checks if Neo can move to the inmediate inferior side
-       * @param the matrix to be checked
-       * @return true if Neo can move, otherwise false
-       */
-        private static bool abajoNM(Matrix matriz)
-        {
-            bool ans = false;
-            try
-            {
-                if (matriz.matrix[matriz.NeoCell.getX() + 1, matriz.NeoCell.getY()].GetType() == typeof(Character))
-                    ans = true;
-            }
-            catch (IndexOutOfRangeException iore)
-            {
-                ans = false;
-            }
-            return ans;
-        }
-        /** this methods checks if Neo can move to the inmediate left side
-       * @param the matrix to be checked
-       * @return true if Neo can move, otherwise false
-       */
-        private static bool izqNM(Matrix matriz)
-        {
-            bool ans = false;
-            try
-            {
-                if (matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY() - 1].GetType() == typeof(Character))
-                    ans = true;
-            }
-            catch (IndexOutOfRangeException iore)
-            {
-                ans = false;
-            }
-            return ans;
-        }
-        /** this methods checks if Neo can move to the inmediate right side
-       * @param the matrix to be checked
-       * @return true if Neo can move, otherwise false
-       */
-        private static bool derchNM(Matrix matriz)
-        {
-            bool ans = false;
-            try
-            {
-                if (matriz.matrix[matriz.NeoCell.getX(), matriz.NeoCell.getY() + 1].GetType() == typeof(Character))
-                    ans = true;
-            }
-            catch (IndexOutOfRangeException iore)
-            {
-                ans = false;
-            }
-            return ans;
+            return answer;
+
         }
 
 
@@ -582,86 +269,15 @@ namespace MAtrixProyect
         private static bool checkForNeo(Matrix matriz)
         {
             bool ans = false;
-            if (si(matriz) || sd(matriz) || ii(matriz) || id(matriz))
+            if (siSM(matriz,2) || sdSM(matriz,2) || iiSM(matriz,2) || idSM(matriz,2))
             {
                 ans = true;
             }
             return ans;
         }
-        /** this methods checks if Neo is in range from Smith tom be caugth
-         * @param the matrix to be checked
-         * @return true if neo is in range, otherwise false
-         */
-        private static bool si(Matrix matriz)
-        {
-            bool ans = false;
-            try
-            {
-                if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Neo))
-                    ans = true; 
-            }catch(IndexOutOfRangeException iore)
-            {
-                ans = false;
-            }
-            return ans;
-        }
-        /** this methods checks if Neo is in range from Smith tom be caugth
-         * @param the matrix to be checked
-         * @return true if neo is in range, otherwise false
-         */
-        private static bool sd(Matrix matriz)
-        {
-            bool ans = false;
-            try
-            {
-                if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() + 1].GetType() == typeof(Neo))
-                    ans = true;
-            }
-            catch (IndexOutOfRangeException iore)
-            {
-                ans = false;
-            }
-            return ans;
-        }
-        /** this methods checks if Neo is in range from Smith tom be caugth
-         * @param the matrix to be checked
-         * @return true if neo is in range, otherwise false
-         */
-        private static bool ii(Matrix matriz)
-        {
-            bool ans = false;
-            try
-            {
-                if (matriz.matrix[matriz.SmithCell.getX() + 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Neo))
-                    ans = true;
-            }
-            catch (IndexOutOfRangeException iore)
-            {
-                ans = false;
-            }
-            return ans;
-        }
-        /** this methods checks if Neo is in range from Smith tom be caugth
-         * @param the matrix to be checked
-         * @return true if neo is in range, otherwise false
-         */
-        private static bool id(Matrix matriz)
-        {
-            bool ans = false;
-            try
-            {
-                if (matriz.matrix[matriz.SmithCell.getX() + 1, matriz.SmithCell.getY() + 1].GetType() == typeof(Neo))
-                    ans = true;
-            }
-            catch (IndexOutOfRangeException iore)
-            {
-                ans = false;
-            }
-            return ans;
-        }
         /**
-         * method to calculate teh movement of the agent smith
-         * @param the matrix and the agent smith
+         * this method calculates de movemnt of smith
+         * @param the matrix used for simulation, Smith amd the queue of characters 
          */
         public static void smithMovement(Matrix matriz, Smith smith, Queue<Character> characters)
         {
@@ -678,13 +294,13 @@ namespace MAtrixProyect
             else if ((matriz.NeoCell.getX() - matriz.SmithCell.getX()) == 0)
             {
                 String ans = "";
-                if (siSM(matriz))
+                if (siSM(matriz,1))
                     ans += "a";
-                if (sdSM(matriz))
+                if (sdSM(matriz,1))
                     ans += "b";
-                if (iiSM(matriz))
+                if (iiSM(matriz,1))
                     ans += "c";
-                if (idSM(matriz))
+                if (idSM(matriz,1))
                     ans += "d";
                 int num = RandomNumber.random_Number(0, 100);
                 switch (ans)
@@ -732,13 +348,13 @@ namespace MAtrixProyect
             {
                 String ans = "";
                 int num = RandomNumber.random_Number(0, 100);
-                if (siSM(matriz))
+                if (siSM(matriz,1))
                     ans += "a";
-                if (sdSM(matriz))
+                if (sdSM(matriz,1))
                     ans += "b";
-                if (iiSM(matriz))
+                if (iiSM(matriz,1))
                     ans += "c";
-                if (idSM(matriz))
+                if (idSM(matriz,1))
                     ans += "d";
                 switch (ans)
                 {
@@ -779,12 +395,14 @@ namespace MAtrixProyect
          * @param the matrix to be checked
          * @return true if smith can move, otherwise false
          */
-        private static bool siSM(Matrix matriz)
+        private static bool siSM(Matrix matriz, int op)
         {
             bool ans = false;
             try
             {
-                if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Character))
+                if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Character) && op == 1)
+                    ans = true;
+                else if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Neo) && op == 2)
                     ans = true;
             }
             catch (IndexOutOfRangeException iore)
@@ -797,12 +415,14 @@ namespace MAtrixProyect
          * @param the matrix to be checked
          * @return true if smith can move, otherwise false
          */
-        private static bool sdSM(Matrix matriz)
+        private static bool sdSM(Matrix matriz,int op)
         {
             bool ans = false;
             try
             {
-                if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() + 1].GetType() == typeof(Character))
+                if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() + 1].GetType() == typeof(Character) && op == 1)
+                    ans = true;
+                else if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Neo) && op == 2)
                     ans = true;
             }
             catch (IndexOutOfRangeException iore)
@@ -815,12 +435,14 @@ namespace MAtrixProyect
          * @param the matrix to be checked
          * @return true if smith can move, otherwise false
          */
-        private static bool iiSM(Matrix matriz)
+        private static bool iiSM(Matrix matriz, int op)
         {
             bool ans = false;
             try
             {
-                if (matriz.matrix[matriz.SmithCell.getX() + 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Character))
+                if (matriz.matrix[matriz.SmithCell.getX() + 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Character) && op == 1)
+                    ans = true;
+                else if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Neo) && op == 2)
                     ans = true;
             }
             catch (IndexOutOfRangeException iore)
@@ -833,12 +455,14 @@ namespace MAtrixProyect
          * @param the matrix to be checked
          * @return true if smith can move, otherwise false
          */
-        private static bool idSM(Matrix matriz)
+        private static bool idSM(Matrix matriz, int op)
         {
             bool ans = false;
             try
             {
-                if (matriz.matrix[matriz.SmithCell.getX() + 1, matriz.SmithCell.getY() + 1].GetType() == typeof(Character))
+                if (matriz.matrix[matriz.SmithCell.getX() + 1, matriz.SmithCell.getY() + 1].GetType() == typeof(Character) && op == 1)
+                    ans = true;
+                else if (matriz.matrix[matriz.SmithCell.getX() - 1, matriz.SmithCell.getY() - 1].GetType() == typeof(Neo) && op == 2)
                     ans = true;
             }
             catch (IndexOutOfRangeException iore)
