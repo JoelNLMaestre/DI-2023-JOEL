@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace appPrueba
+namespace ExampleMVC_NO_DataBase
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,16 +23,6 @@ namespace appPrueba
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void save_button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
