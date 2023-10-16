@@ -30,7 +30,7 @@ namespace appPrueba
 
         }
 
-        private void save_button_Click()
+        private void save_button_Click(object sender, RoutedEventArgs e)
         {
 
         }
