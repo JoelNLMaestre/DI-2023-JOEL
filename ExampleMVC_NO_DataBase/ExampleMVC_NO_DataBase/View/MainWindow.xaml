@@ -11,6 +11,15 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dgPeople" AutoGenerateColumns="True"/>
+        <DataGrid x:Name="dgPeople" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" SelectionChanged="dgPeople_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="NAME" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="AGE" Binding="{Binding Age}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <Button x:Name="btnExample" Content="Push me" Grid.Column="1" Margin="20" Click="btnExample_Click"></Button>
+            <TextBox x:Name="boxExample"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -29,5 +29,14 @@ namespace ExampleMVC_NO_DataBase
             pm.readP();
             dgPeople.ItemsSource = pm.GetList();
         }
+        private void dgPeople_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MessageBox.Show("Seleccionado");
+        }
+        private void btnExample_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Good job! <3");
+        }
+
     }
 }
