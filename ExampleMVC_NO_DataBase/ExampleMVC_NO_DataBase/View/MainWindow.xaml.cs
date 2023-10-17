@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ExampleMVC_NO_DataBase.Domain;
+using ExampleMVC_NO_DataBase.Persistence.Manages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,9 @@ namespace ExampleMVC_NO_DataBase
         public MainWindow()
         {
             InitializeComponent();
+            People pm = new People();
+            pm.readP();
+            dgPeople.ItemsSource = pm.GetList();
         }
     }
 }

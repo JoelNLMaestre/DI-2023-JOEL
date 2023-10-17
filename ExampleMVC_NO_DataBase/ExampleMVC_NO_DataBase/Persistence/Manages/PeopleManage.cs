@@ -8,20 +8,15 @@ using ExampleMVC_NO_DataBase.Domain;
 
 namespace ExampleMVC_NO_DataBase.Persistence.Manages
 {
-    internal class PeopleManage
+    public class PeopleManage
     {
-        private DataTable table;
-        List<People> listPeople;
-
-
+        private DataTable table { get; set; }
+        public List<People> listPeople { get; set; }
         public PeopleManage()
         {
             table = new DataTable();
+            listPeople = new List<People>();
         }
-
-        public DataTable Table { get => table; set => table = value; }
-        internal List<People> ListPeople { get => listPeople; set => listPeople = value; }
-
         public void readPeople()
         {
             listPeople.Add(new People("Neil", 42));
