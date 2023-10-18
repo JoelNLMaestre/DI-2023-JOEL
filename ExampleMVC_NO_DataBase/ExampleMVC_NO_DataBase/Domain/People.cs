@@ -24,6 +24,12 @@ namespace ExampleMVC_NO_DataBase.Domain
             this.Age = age;
             pm = new PeopleManage();
         }
+        public People(string name)
+        {
+            this.Name = name;
+            this.Age = 15;
+            pm = new PeopleManage();
+        }
 
         public void readP()
         {
@@ -33,6 +39,10 @@ namespace ExampleMVC_NO_DataBase.Domain
         public List<People> GetList()
         {
             return pm.listPeople;
+        }
+        public void addList(People people)
+        {
+            pm.listPeople.Add(people);
         }
     }
 }

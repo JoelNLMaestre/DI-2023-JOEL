@@ -8,18 +8,19 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="47*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dgPeople" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" SelectionChanged="dgPeople_SelectionChanged">
+        <DataGrid x:Name="dgPeople" AutoGenerateColumns="False" IsReadOnly="True" Margin="5,5,5,5" SelectionChanged="dgPeople_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="NAME" Binding="{Binding Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="AGE" Binding="{Binding Age}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Orientation="Vertical" Grid.Column="1">
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="2">
             <Button x:Name="btnExample" Content="Push me" Grid.Column="1" Margin="20" Click="btnExample_Click"></Button>
-            <TextBox x:Name="boxExample"/>
+            <TextBox x:Name="boxExample" />
         </StackPanel>
     </Grid>
 </Window>

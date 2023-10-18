@@ -22,6 +22,8 @@ namespace ExampleMVC_NO_DataBase.Persistence.Manages
             listPeople.Add(new People("Neil", 42));
             listPeople.Add(new People("Jimi", 20));
             listPeople.Add(new People("Yara", 34));
+            listPeople.Add(new People("Yara", 34));
+            listPeople.Add(new People("Yara", 34));
         }
     }
 }

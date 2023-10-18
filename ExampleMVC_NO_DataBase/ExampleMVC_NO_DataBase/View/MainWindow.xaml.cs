@@ -31,12 +31,16 @@ namespace ExampleMVC_NO_DataBase
         }
         private void dgPeople_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show("Seleccionado");
+            MessageBox.Show("selection changed");
         }
         private void btnExample_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Good job! <3");
-        }
 
+            String name = boxExample.Text;
+            People people = new People(name);
+            people.addList(people);
+            people.readP();
+            dgPeople.ItemsSource = people.GetList();
+        }
     }
 }
