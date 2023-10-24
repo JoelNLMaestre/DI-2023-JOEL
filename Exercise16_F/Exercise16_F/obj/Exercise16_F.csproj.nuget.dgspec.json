@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\Exercise16_F.csproj": {}
+    "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\Exercise16_F.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\Exercise16_F.csproj": {
+    "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\Exercise16_F.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\Exercise16_F.csproj",
+        "projectUniqueName": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\Exercise16_F.csproj",
         "projectName": "Exercise16_F",
-        "projectPath": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\Exercise16_F.csproj",
-        "packagesPath": "C:\\Users\\joeln\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\obj\\",
+        "projectPath": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\Exercise16_F.csproj",
+        "packagesPath": "C:\\Users\\DAM02\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Exercise16_F\\Exercise16_F\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\joeln\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DAM02\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
