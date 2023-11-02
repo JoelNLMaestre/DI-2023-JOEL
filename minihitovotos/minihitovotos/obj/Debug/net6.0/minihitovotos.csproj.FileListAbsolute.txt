@@ -1,0 +1,14 @@
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\bin\Debug\net6.0\minihitovotos.exe
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\bin\Debug\net6.0\minihitovotos.deps.json
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\bin\Debug\net6.0\minihitovotos.runtimeconfig.json
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\bin\Debug\net6.0\minihitovotos.dll
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\bin\Debug\net6.0\minihitovotos.pdb
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\obj\Debug\net6.0\minihitovotos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\obj\Debug\net6.0\minihitovotos.AssemblyInfoInputs.cache
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\obj\Debug\net6.0\minihitovotos.AssemblyInfo.cs
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\obj\Debug\net6.0\minihitovotos.csproj.CoreCompileInputs.cache
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\obj\Debug\net6.0\minihitovotos.dll
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\obj\Debug\net6.0\refint\minihitovotos.dll
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\obj\Debug\net6.0\minihitovotos.pdb
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\obj\Debug\net6.0\minihitovotos.genruntimeconfig.cache
+C:\Users\b15-13m\source\repos\minihitovotos\minihitovotos\obj\Debug\net6.0\ref\minihitovotos.dll
