@@ -100,6 +100,7 @@ namespace ExampleMVCnoDatabase
                         MessageBox.Show("this text must be a number");
                     }
                     dgvPeople.Items.Refresh();
+                    start();
                 }
             }
         }

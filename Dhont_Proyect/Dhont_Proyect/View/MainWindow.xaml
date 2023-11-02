@@ -1,0 +1,108 @@
+﻿<Window x:Class="Dhont_Proyect.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dhont_Proyect"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="8*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="MADRID ELECTIONS" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"></TextBlock>
+        </Grid>
+        <TabControl TabStripPlacement="Left" Grid.Row="1">
+            <TabItem Header="Previous data">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                       
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Population: " VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Visible" Grid.Column="0" Grid.Row="0"></TextBlock>
+                    <TextBox x:Name="textTotalVotes" Text="6921267" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="0"></TextBox>
+                    <TextBlock Text="Abstension Votes: " VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Visible" Grid.Column="0" Grid.Row="1"></TextBlock>
+                    <TextBox  x:Name="textAbstension" Text="2576037" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="1"></TextBox>
+                    <TextBlock Text="Null Votes:" VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Visible" Grid.Column="0" Grid.Row="2"></TextBlock>
+                    <TextBox x:Name="textNullVotes" Text="217261" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="2"></TextBox>
+                    <Button Content="SAVE" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" Width="100"></Button>   
+                </Grid>
+            </TabItem>
+            <TabItem Header="Parties Management">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="3*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                        <Button x:Name="btnNew" Content="New" Margin="25" Width="50" Click="btnNew_Click"></Button>
+                        <Button x:Name="btnDel" Content="Delete" Margin="25" Width="100" Click="btnDel_Click"></Button>
+                    </StackPanel>
+                    <DataGrid x:Name="dgvParty" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="dgvParty_SelectionChanged" Margin="5" Grid.Column="0" Grid.Row="1">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Acronym" Binding="{Binding acronym}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Name" Binding="{Binding name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="President" Binding="{Binding president}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Acronym: " Margin="5" ></Label>
+                            <TextBox x:Name="txtAcronym" Margin="5" Width="200"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Name of Party: " Margin="5"></Label>
+                            <TextBox x:Name="txtName" Margin="5" Width="200"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="President: " Margin="5"></Label>
+                            <TextBox x:Name="txtPresident" Margin="5" Width="200"></TextBox>
+                        </StackPanel>
+                        <Button x:Name="btnSave" Content="Save" Grid.Column="1" Margin="20" Click="btnSave_Click"/>
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Simulation">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="4*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <Button x:Name="btnSimular" Content="Simulate" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20" Width="200" Click="btnSimular_Click"></Button>
+                        <TextBox x:Name="editVotos" Margin="20" Width="100" VerticalAlignment="Center" Text="37"></TextBox> 
+                    </StackPanel>
+                    <DataGrid x:Name="dgvSeats" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Party" Binding="{Binding name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Votes" Binding="{Binding votes}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Seats" Binding="{Binding seats}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

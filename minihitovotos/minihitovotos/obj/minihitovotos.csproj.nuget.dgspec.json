@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\b15-13m\\source\\repos\\minihitovotos\\minihitovotos\\minihitovotos.csproj": {}
+    "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\minihitovotos\\minihitovotos\\minihitovotos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\b15-13m\\source\\repos\\minihitovotos\\minihitovotos\\minihitovotos.csproj": {
+    "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\minihitovotos\\minihitovotos\\minihitovotos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\b15-13m\\source\\repos\\minihitovotos\\minihitovotos\\minihitovotos.csproj",
+        "projectUniqueName": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\minihitovotos\\minihitovotos\\minihitovotos.csproj",
         "projectName": "minihitovotos",
-        "projectPath": "C:\\Users\\b15-13m\\source\\repos\\minihitovotos\\minihitovotos\\minihitovotos.csproj",
-        "packagesPath": "C:\\Users\\b15-13m\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\b15-13m\\source\\repos\\minihitovotos\\minihitovotos\\obj\\",
+        "projectPath": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\minihitovotos\\minihitovotos\\minihitovotos.csproj",
+        "packagesPath": "C:\\Users\\DAM02\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\minihitovotos\\minihitovotos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\b15-13m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DAM02\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
