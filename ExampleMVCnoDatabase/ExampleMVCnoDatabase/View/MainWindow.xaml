@@ -18,7 +18,8 @@
             </StackPanel>
             <DataGrid x:Name="dgvPeople" AutoGenerateColumns="False" IsReadOnly="True" Margin="5" SelectionChanged="dgvPeople_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="NAME" Binding="{Binding name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="NAME" Binding="{Binding name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="AGE" Binding="{Binding age}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>

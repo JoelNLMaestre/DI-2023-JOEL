@@ -9,6 +9,7 @@ namespace ExampleMVCnoDatabase.Domain
 {
     internal class People
     {
+        public int Id { get; set; }
         public String name { get; set; }
         public int age { get; set; }
         public PeopleManage pm { get; set; }
@@ -17,6 +18,11 @@ namespace ExampleMVCnoDatabase.Domain
             pm = new PeopleManage();
         }
 
+        public People(int id)
+        {
+            pm = new PeopleManage();
+            this.Id = id;
+        }
         public People(string name, int age)
         {
             this.name = name;
@@ -33,6 +39,17 @@ namespace ExampleMVCnoDatabase.Domain
             return pm.listPeople;
         }
 
+        public void insert()
+        {
+            pm.insertPeople(this);
+        }
 
+        public void last()
+        {
+            pm.lastId(this);
+        }
+        public void delete() {
+            pm.delete(this);
+        }
     }
 }

@@ -65,7 +65,7 @@ namespace ExampleMVCnoDatabase
         {
             if (MessageBox.Show("Do you want to remove this person?","Confirmation",MessageBoxButton.YesNo)==MessageBoxResult.Yes) {
                 People people = (People)dgvPeople.SelectedItem;
-
+                people.delete();
                 List<People> lst = (List<People>)dgvPeople.ItemsSource ;
                 lst.Remove(people);
                 dgvPeople.Items.Refresh();
@@ -80,7 +80,10 @@ namespace ExampleMVCnoDatabase
             {
                 if (MessageBox.Show("Do you want to add this person", "Confirmacion", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-                    ((List<People>)dgvPeople.ItemsSource).Add(new People(txtName.Text, Int32.Parse(txtAge.Text)));
+                    People p = new People(txtName.Text, Int32.Parse(txtAge.Text));
+                    p.insert();
+                    p.last();
+                    ((List<People>)dgvPeople.ItemsSource).Add(p);
                     dgvPeople.Items.Refresh();
                     start();
                 }
