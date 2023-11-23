@@ -1,0 +1,14 @@
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\bin\Debug\net6.0\Squid_Game.exe
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\bin\Debug\net6.0\Squid_Game.deps.json
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\bin\Debug\net6.0\Squid_Game.runtimeconfig.json
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\bin\Debug\net6.0\Squid_Game.dll
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\bin\Debug\net6.0\Squid_Game.pdb
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\obj\Debug\net6.0\Squid_Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\obj\Debug\net6.0\Squid_Game.AssemblyInfoInputs.cache
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\obj\Debug\net6.0\Squid_Game.AssemblyInfo.cs
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\obj\Debug\net6.0\Squid_Game.csproj.CoreCompileInputs.cache
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\obj\Debug\net6.0\Squid_Game.dll
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\obj\Debug\net6.0\refint\Squid_Game.dll
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\obj\Debug\net6.0\Squid_Game.pdb
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\obj\Debug\net6.0\Squid_Game.genruntimeconfig.cache
+C:\Users\DAM02\source\repos\Squid_Game\Squid_Game\obj\Debug\net6.0\ref\Squid_Game.dll

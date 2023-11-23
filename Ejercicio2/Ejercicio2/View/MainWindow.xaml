@@ -1,0 +1,43 @@
+﻿<Window x:Class="Ejercicio2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ejercicio2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="350">
+    <Grid >
+        <Grid.RowDefinitions >
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="SQUID GAME" Grid.Column="0" Grid.Row="0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="A:" FontSize="20" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtA" Margin="10" Height="20" Width="50" VerticalAlignment="Center"/>
+            <TextBlock Text="X"  Margin="20" FontSize="20" VerticalAlignment="Center"/>
+            <TextBlock Text="B:" FontSize="20" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtB" Margin="10" Height="20" Width="50" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <StackPanel Orientation="Vertical" Grid.Row="2" HorizontalAlignment="Center">
+                <TextBlock Text="FIGURE:" FontSize="20" Grid.Row="2"/>
+                <Label Content="Bishop" HorizontalAlignment="Center" />
+                <Label Content="Tower" HorizontalAlignment="Center" />
+                <Label Content="Queen" HorizontalAlignment="Center" />
+                <Label Content="Horse" HorizontalAlignment="Center" />
+            </StackPanel>
+            <TextBlock Text="" x:Name="texto" FontSize="15" Grid.Row="2"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Button x:Name="btnEnd" Margin="10" Content="End" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="35" Click="btnEnd_Click"/>
+            <Button x:Name="btnShow" Margin="10" Content="Show" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="35" Click="btnShow_Click"/>
+        </StackPanel>
+        
+    </Grid>
+    
+</Window>
