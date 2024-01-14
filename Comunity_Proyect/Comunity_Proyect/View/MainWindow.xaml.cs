@@ -22,7 +22,9 @@ namespace Comunity_Proyect
     public partial class MainWindow : Window
     {
         Page1 page1;
-        Page2 page2;    
+        Page2 page2;
+        int entrances;
+        int num = 1;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,12 +35,12 @@ namespace Comunity_Proyect
         private void generateBttn_Click(object sender, RoutedEventArgs e)
         {
             page2 = new Page2();
-            page2.messBox.Text = "hola mundo";
+            page2.messBox.Text = "Entrance" + num;
             frameContenedor.Navigate(page2);
             generateBttn.Visibility = Visibility.Hidden;
             nextBttn.Visibility = Visibility.Visible;
             backBttn.Visibility = Visibility.Visible;
-
+            entrances = Int32.Parse(page1.entrancesBox.Text);
         }
 
         private void backBttn_Click(object sender, RoutedEventArgs e)
@@ -51,7 +53,19 @@ namespace Comunity_Proyect
 
         private void nextBttn_Click(object sender, RoutedEventArgs e)
         {
-            page2.messBox.Text = "  ";
+            if (num != entrances)
+            {
+                num++;
+                page2.messBox.Text = "Entrance " + num;
+                page2.stairsBox.Text = " ";
+                page2.highsBox.Text = " ";
+                page2.initialLetterBox.Text = " ";
+                page2.finalLetterBox.Text = " ";
+            }
+            else
+            {
+                frameContenedor.Navigate(page1);
+            }
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joeln\\source\\repos\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj": {}
+    "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joeln\\source\\repos\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj": {
+    "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joeln\\source\\repos\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj",
+        "projectUniqueName": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj",
         "projectName": "Comunity_Proyect",
-        "projectPath": "C:\\Users\\joeln\\source\\repos\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj",
+        "projectPath": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj",
         "packagesPath": "C:\\Users\\joeln\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joeln\\source\\repos\\Comunity_Proyect\\Comunity_Proyect\\obj\\",
+        "outputPath": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joeln\\AppData\\Roaming\\NuGet\\NuGet.Config",
