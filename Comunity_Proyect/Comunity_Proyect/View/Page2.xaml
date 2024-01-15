@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="messBox" Grid.Column="0" Grid.Row="0" />
 
-        <TextBlock Text="Nº of Stairs: " Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock Text="Nº of Stairs: " x:Name="stairBlock" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
         <TextBox x:Name="stairsBox" Grid.Column="1" Grid.Row="1" Margin="10" Height="20" Width="150" TextWrapping="NoWrap" />
 
         <TextBlock Text="Nº of Highs: " Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>

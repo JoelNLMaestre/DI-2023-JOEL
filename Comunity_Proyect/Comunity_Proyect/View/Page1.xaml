@@ -35,8 +35,8 @@
         <TextBlock Text="Communal Pool: " Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
         <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <ListBox x:Name="opcionListBox" SelectionMode="Single" Margin="5">
-                <ListBoxItem Content="Yes" />
-                <ListBoxItem Content="No" />
+                <ListBoxItem x:Name="yesoption" Content="Yes" />
+                <ListBoxItem x:Name="nooption" Content="No" />
             </ListBox>
         </StackPanel>
 

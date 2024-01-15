@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj": {}
+    "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj": {
+    "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj",
+        "projectUniqueName": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj",
         "projectName": "Comunity_Proyect",
-        "projectPath": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj",
-        "packagesPath": "C:\\Users\\joeln\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joeln\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\obj\\",
+        "projectPath": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\Comunity_Proyect.csproj",
+        "packagesPath": "C:\\Users\\DAM02\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DAM02\\source\\repos\\DI-2023-JOEL\\Comunity_Proyect\\Comunity_Proyect\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\joeln\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DAM02\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

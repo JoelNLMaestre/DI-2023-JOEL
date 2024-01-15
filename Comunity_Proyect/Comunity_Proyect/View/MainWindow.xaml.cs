@@ -1,7 +1,9 @@
-﻿using Comunity_Proyect.View;
+﻿using Comunity_Proyect.Domain;
+using Comunity_Proyect.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Printing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,8 +25,11 @@ namespace Comunity_Proyect
     {
         Page1 page1;
         Page2 page2;
-        int entrances;
-        int num = 1;
+        Comunidad com;
+        int num = 0;
+        String[] portales;
+        List<Piso> pisos = new List<Piso>();
+        List<Propietario> propietarios = new List<Propietario>(); 
         public MainWindow()
         {
             InitializeComponent();
@@ -35,32 +40,56 @@ namespace Comunity_Proyect
         private void generateBttn_Click(object sender, RoutedEventArgs e)
         {
             page2 = new Page2();
-            page2.messBox.Text = "Entrance" + num;
+            page2.messBox.Text = "Entrance " + (num+1);
             frameContenedor.Navigate(page2);
             generateBttn.Visibility = Visibility.Hidden;
             nextBttn.Visibility = Visibility.Visible;
             backBttn.Visibility = Visibility.Visible;
-            entrances = Int32.Parse(page1.entrancesBox.Text);
+            com = new Comunidad();
+            try
+            {
+                com.name = page1.nameBox.Text;
+                com.address = page1.addressBox.Text;
+                com.fundation = DateTime.ParseExact(page1.escogerFecha.Text.ToString(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                com.leasable = Int32.Parse(page1.areaBox.Text.ToString());
+                if (page1.opcionListBox.SelectedIndex == 0)
+                {
+                    com.pool = true;
+                }
+                else
+                {
+                    com.pool = false;
+                }
+
+                com.entrances = Int32.Parse(page1.entrancesBox.Text.ToString());
+                portales = new String[Int32.Parse(page1.entrancesBox.Text.ToString())];
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(" Error:" + ex.ToString());
+            }
         }
 
         private void backBttn_Click(object sender, RoutedEventArgs e)
         {
-            frameContenedor.Navigate(page1);
-            generateBttn.Visibility = Visibility.Visible;
-            nextBttn.Visibility = Visibility.Hidden;
-            backBttn.Visibility = Visibility.Hidden;
+            // TODO YET TO BE IMPLEMENTED
         }
 
         private void nextBttn_Click(object sender, RoutedEventArgs e)
         {
-            if (num != entrances)
+            if (num < com.entrances)
             {
                 num++;
                 page2.messBox.Text = "Entrance " + num;
+                portales[num] = page2.stairsBox.Text.ToString() + page2.highsBox.Text.ToString() + page2.initialLetterBox.Text.ToString() + page2.finalLetterBox.Text.ToString();
+                
+                
+                
                 page2.stairsBox.Text = " ";
                 page2.highsBox.Text = " ";
                 page2.initialLetterBox.Text = " ";
-                page2.finalLetterBox.Text = " ";
+                page2.finalLetterBox.Text = " "; 
             }
             else
             {
