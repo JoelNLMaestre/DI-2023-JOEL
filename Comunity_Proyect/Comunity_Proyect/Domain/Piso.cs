@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Comunity_Proyect.Persistence.Manage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,17 +9,27 @@ namespace Comunity_Proyect.Domain
 {
     internal class Piso
     {
-        private int portal { set; get; }
-        private int high { set; get; }
-        private char letter { set; get; }
-        private int parking { set; get; }
-        private int storageroom { set; get; }
+        public int Id { set; get; }
+        public int portal { set; get; }
+        public int high { set; get; }
+        public char letter { set; get; }
+        public PisoManage pm { set; get; }
+        public int stair { set; get; }
+        public int parking { set; get; }
+        public int storageroom { set; get; }
 
-        public Piso(int portal, int high, char letter)
+        public Piso(int portal, int stair, int high, char letter)
         {
             this.portal = portal;
+            this.stair = stair;
             this.high = high;
             this.letter = letter;
+            pm = new PisoManage();
+        }
+
+        public Piso(int iD)
+        {
+            this.Id = iD;
         }
 
         public override bool Equals(object? obj)

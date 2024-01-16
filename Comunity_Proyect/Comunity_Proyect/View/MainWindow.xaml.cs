@@ -1,4 +1,5 @@
 ﻿using Comunity_Proyect.Domain;
+using Comunity_Proyect.Persistence.Manage;
 using Comunity_Proyect.View;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,8 @@ namespace Comunity_Proyect
         int num = 0;
         String[] portales;
         List<Piso> pisos = new List<Piso>();
-        List<Propietario> propietarios = new List<Propietario>(); 
+        List<Propietario> propietarios = new List<Propietario>();
+        PisoManage pm = new PisoManage();
         public MainWindow()
         {
             InitializeComponent();
@@ -42,9 +44,6 @@ namespace Comunity_Proyect
             page2 = new Page2();
             page2.messBox.Text = "Entrance " + (num+1);
             frameContenedor.Navigate(page2);
-            generateBttn.Visibility = Visibility.Hidden;
-            nextBttn.Visibility = Visibility.Visible;
-            backBttn.Visibility = Visibility.Visible;
             com = new Comunidad();
             try
             {
@@ -63,12 +62,25 @@ namespace Comunity_Proyect
 
                 com.entrances = Int32.Parse(page1.entrancesBox.Text.ToString());
                 portales = new String[Int32.Parse(page1.entrancesBox.Text.ToString())];
-
+                
             }
             catch (Exception ex)
             {
                 Console.WriteLine(" Error:" + ex.ToString());
             }
+            if(com.entrances == 1)
+            {
+                generateBttn.Visibility = Visibility.Hidden;
+                finishBttn.Visibility = Visibility.Visible;
+                backBttn.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                generateBttn.Visibility = Visibility.Hidden;
+                nextBttn.Visibility = Visibility.Visible;
+                backBttn.Visibility = Visibility.Visible;
+            }
+           
         }
 
         private void backBttn_Click(object sender, RoutedEventArgs e)
@@ -78,14 +90,31 @@ namespace Comunity_Proyect
 
         private void nextBttn_Click(object sender, RoutedEventArgs e)
         {
-            if (num < com.entrances)
+            if(num == com.entrances)
             {
+                nextBttn.Visibility = Visibility.Hidden;
+                finishBttn.Visibility = Visibility.Visible;
+            }
+            if (num <= com.entrances)
+            {
+                int numletras = page2.finalLetterBox.Text[0] - page2.initialLetterBox.Text[0];
+                char letra = page2.initialLetterBox.Text[0];
+                for (int i=1; i<=Int32.Parse(page2.stairsBox.Text.ToString()); i++)
+                {
+                    for (int j=1; i<= Int32.Parse(page2.highsBox.Text.ToString()); i++)
+                    {
+                        for (int k=0; k<=numletras; k++)
+                        {
+                            Piso piso = new Piso(num, i, j, (char)(letra + k));
+                            pisos.Add(piso);
+                            pm.insertPiso(piso);
+                        }
+                    }
+                }
+
                 num++;
                 page2.messBox.Text = "Entrance " + num;
-                portales[num] = page2.stairsBox.Text.ToString() + page2.highsBox.Text.ToString() + page2.initialLetterBox.Text.ToString() + page2.finalLetterBox.Text.ToString();
-                
-                
-                
+
                 page2.stairsBox.Text = " ";
                 page2.highsBox.Text = " ";
                 page2.initialLetterBox.Text = " ";
@@ -95,6 +124,29 @@ namespace Comunity_Proyect
             {
                 frameContenedor.Navigate(page1);
             }
+        }
+
+        private void finishBttn_Click(object sender, RoutedEventArgs e)
+        {
+            int numletras = page2.finalLetterBox.Text[0] - page2.initialLetterBox.Text[0];
+            char letra = page2.initialLetterBox.Text[0];
+            for (int i = 1; i <= Int32.Parse(page2.stairsBox.Text.ToString()); i++)
+            {
+                for (int j = 1; i <= Int32.Parse(page2.highsBox.Text.ToString()); i++)
+                {
+                    for (int k = 0; k <= numletras; k++)
+                    {
+                        Piso piso = new Piso(num, i, j, (char)(letra + k));
+                        pisos.Add(piso);
+                        pm.insertPiso(piso);
+                    }
+                }
+            }
+            page2.stairsBox.Text = " ";
+            page2.highsBox.Text = " ";
+            page2.initialLetterBox.Text = " ";
+            page2.finalLetterBox.Text = " ";
+            frameContenedor.Navigate(page1);
         }
     }
 }

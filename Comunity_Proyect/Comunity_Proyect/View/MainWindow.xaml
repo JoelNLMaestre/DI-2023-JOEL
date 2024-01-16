@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Comunity_Proyect"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="400">
+        Title="MainWindow" Height="600" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -17,9 +17,10 @@
         <Frame x:Name="frameContenedor" Grid.Row="1" NavigationUIVisibility="Hidden"/>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="backBttn" Content="Back" Width="100" Height="30" Margin="15" Grid.Row="2" Visibility="Hidden" Click="backBttn_Click"/>
-            <Button x:Name="nextBttn" Content="Next" Width="100" Height="30"  Margin="15" Grid.Row="2" Visibility="Hidden" Click="nextBttn_Click"/>
-            <Button x:Name="generateBttn" Content="Generate" Width="100" Height="30" HorizontalAlignment="Center" Margin="15" Grid.Row="2" Click="generateBttn_Click"/>
+            <Button x:Name="backBttn" Content="Back" Width="90" Height="30" Margin="15" Grid.Row="2" Visibility="Hidden" Click="backBttn_Click"/>
+            <Button x:Name="nextBttn" Content="Next" Width="90" Height="30"  Margin="15" Grid.Row="2" Visibility="Hidden" Click="nextBttn_Click"/>
+            <Button x:Name="finishBttn" Content="Finish" Width="90" Height="30"  Margin="15" Grid.Row="2" Visibility="Hidden" Click="finishBttn_Click"/>
+            <Button x:Name="generateBttn" Content="Generate" Width="90" Height="30" HorizontalAlignment="Center" Margin="15" Grid.Row="2" Click="generateBttn_Click"/>
         </StackPanel>
 
     </Grid>

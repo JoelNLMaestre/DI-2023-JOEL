@@ -9,7 +9,7 @@ namespace ExampleMVCnoDatabase.Domain
 {
     internal class People
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
         public String name { get; set; }
         public int age { get; set; }
         public PeopleManage pm { get; set; }
