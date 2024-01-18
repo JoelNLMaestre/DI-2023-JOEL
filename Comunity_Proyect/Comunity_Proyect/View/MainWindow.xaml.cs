@@ -32,6 +32,7 @@ namespace Comunity_Proyect
         List<Piso> pisos = new List<Piso>();
         List<Propietario> propietarios = new List<Propietario>();
         PisoManage pm = new PisoManage();
+        ComunidadManage cm = new ComunidadManage();
         public MainWindow()
         {
             InitializeComponent();
@@ -60,7 +61,8 @@ namespace Comunity_Proyect
                     com.pool = false;
                 }
 
-                com.entrances = Int32.Parse(page1.entrancesBox.Text.ToString());
+                com.entrances = Int32.Parse(page1.entrancesBox.Text);
+                cm.insertComunidad(com);
                 portales = new String[Int32.Parse(page1.entrancesBox.Text.ToString())];
                 
             }
@@ -101,7 +103,7 @@ namespace Comunity_Proyect
                 char letra = page2.initialLetterBox.Text[0];
                 for (int i=1; i<=Int32.Parse(page2.stairsBox.Text.ToString()); i++)
                 {
-                    for (int j=1; i<= Int32.Parse(page2.highsBox.Text.ToString()); i++)
+                    for (int j=1; j<= Int32.Parse(page2.highsBox.Text.ToString()); j++)
                     {
                         for (int k=0; k<=numletras; k++)
                         {
@@ -132,7 +134,7 @@ namespace Comunity_Proyect
             char letra = page2.initialLetterBox.Text[0];
             for (int i = 1; i <= Int32.Parse(page2.stairsBox.Text.ToString()); i++)
             {
-                for (int j = 1; i <= Int32.Parse(page2.highsBox.Text.ToString()); i++)
+                for (int j = 1; j <= Int32.Parse(page2.highsBox.Text.ToString()); j++)
                 {
                     for (int k = 0; k <= numletras; k++)
                     {
@@ -142,6 +144,8 @@ namespace Comunity_Proyect
                     }
                 }
             }
+
+
             page2.stairsBox.Text = " ";
             page2.highsBox.Text = " ";
             page2.initialLetterBox.Text = " ";

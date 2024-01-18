@@ -9,13 +9,14 @@ namespace Comunity_Proyect.Domain
     
     internal class Propietario
     {
-        private String name { set; get; }
-        private String dni { set; get; }
-        private String surnames { set; get; }
-        private String dir_res { set; get; }
-        private String city { set; get; }
-        private String cp { set; get; } 
-        private String province { set; get; }
+        public int Id { get; set; }
+        public String name { set; get; }
+        public String dni { set; get; }
+        public String surnames { set; get; }
+        public String dir_res { set; get; }
+        public String city { set; get; }
+        public String cp { set; get; } 
+        public String province { set; get; }
 
         public Propietario(string name, string dni, string surnames, string dir_res, string city, string cp, string province)
         {
@@ -26,6 +27,11 @@ namespace Comunity_Proyect.Domain
             this.city = city;
             this.cp = cp;
             this.province = province;
+        }
+        public Propietario() { }
+        public Propietario(int Id)
+        {
+            this.Id = Id;
         }
 
         public override bool Equals(object? obj)
