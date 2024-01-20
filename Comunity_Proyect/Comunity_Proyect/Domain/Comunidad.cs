@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Comunity_Proyect.Persistence.Manage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,14 @@ namespace Comunity_Proyect.Domain
     {
         public String name { get; set; }
         public String address { get; set; }
-        public DateTime fundation { get; set; }
+        public String fundation { get; set; }
         public int leasable { get; set; }
         public bool pool { get; set; }
         public int entrances { get; set; }
 
-        public Comunidad(string name, string address, DateTime fundation, int leasable, bool pool, int entrances)
+        public ComunidadManage cm { get; set; }
+
+        public Comunidad(string name, string address, String fundation, int leasable, bool pool, int entrances)
         {
             this.name = name;
             this.address = address;
@@ -23,10 +26,12 @@ namespace Comunity_Proyect.Domain
             this.leasable = leasable;
             this.pool = pool;
             this.entrances = entrances;
+            this.cm = new ComunidadManage();
         }
 
         public Comunidad()
         {
+            this.cm = new ComunidadManage();
         }
 
         public override bool Equals(object? obj)

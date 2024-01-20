@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Comunity_Proyect.Persistence.Manage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,11 @@ namespace Comunity_Proyect.Domain
         public String surnames { set; get; }
         public String dir_res { set; get; }
         public String city { set; get; }
-        public String cp { set; get; } 
+        public int cp { set; get; } 
         public String province { set; get; }
+        public PropietarioManage pm { set; get; }
 
-        public Propietario(string name, string dni, string surnames, string dir_res, string city, string cp, string province)
+        public Propietario(string name, string dni, string surnames, string dir_res, string city, int cp, string province)
         {
             this.name = name;
             this.dni = dni;
@@ -27,11 +29,16 @@ namespace Comunity_Proyect.Domain
             this.city = city;
             this.cp = cp;
             this.province = province;
+            this.pm = new PropietarioManage();
         }
-        public Propietario() { }
+        public Propietario() 
+        {
+            this.pm = new PropietarioManage();
+        }
         public Propietario(int Id)
         {
             this.Id = Id;
+            this.pm = new PropietarioManage();
         }
 
         public override bool Equals(object? obj)

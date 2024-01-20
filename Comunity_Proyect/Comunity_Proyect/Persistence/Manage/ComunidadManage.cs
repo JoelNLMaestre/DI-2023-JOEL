@@ -14,7 +14,7 @@ namespace Comunity_Proyect.Persistence.Manage
         public void insertComunidad(Comunidad d)
         {
             DBBroker dBbroker = DBBroker.obtenerAgente();
-            dBbroker.modificar("Insert into comunidades (name,address,fundation,leasable,entrances) values (" + d.name + " , " + d.address + " , " + d.fundation + " , '" + d.leasable+ "' , " + d.entrances + ")");
+            dBbroker.modificar("Insert into comunidades (name,address,fundation,leasable,entrances) values ('" + d.name + "' , '" + d.address + "' , '" + d.fundation + "' , " + d.leasable+ " , " + d.entrances + ")");
         }
     }
 }

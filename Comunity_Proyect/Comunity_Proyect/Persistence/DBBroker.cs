@@ -7,7 +7,7 @@ namespace ExampleMVCnoDatabase.Persistence
     {
         private static DBBroker _instancia;
         private static MySql.Data.MySqlClient.MySqlConnection conexion;
-        private const String cadenaConexion = "server=localhost;database=Community_Proyect;uid=root;pwd=12345678";
+        private const String cadenaConexion = "server=localhost;database=community_proyect;uid=root;pwd=12345678";
 
         private DBBroker()
         {
