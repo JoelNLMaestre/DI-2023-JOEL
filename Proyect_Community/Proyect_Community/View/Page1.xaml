@@ -1,0 +1,47 @@
+﻿<Page x:Class="Proyect_Community.View.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Proyect_Community.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="500"
+      Title="Page1">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Community's name: " Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+        <TextBox x:Name="nameBox" Grid.Column="1" Grid.Row="0" Margin="10" Height="20" Width="150" TextWrapping="NoWrap" />
+
+        <TextBlock Text="Address: " Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+        <TextBox x:Name="addressBox" Grid.Column="1" Grid.Row="1" Margin="10" Height="20" Width="150"  TextWrapping="NoWrap" />
+
+        <TextBlock Text="Founding Date: " Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+        <DatePicker Grid.Row="2" Grid.Column="1" x:Name="escogerFecha" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBlock Text="Leasable Area: " Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+        <TextBox x:Name="areaBox" Grid.Column="1" Grid.Row="3" Margin="10" Height="20" Width="150"  TextWrapping="NoWrap" />
+
+        <TextBlock Text="Communal Pool: " Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ListBox x:Name="opcionListBox" SelectionMode="Single" Margin="5">
+                <ListBoxItem x:Name="yesoption" Content="Yes" />
+                <ListBoxItem x:Name="nooption" Content="No" />
+            </ListBox>
+        </StackPanel>
+
+        <TextBlock Text="Nº of Entrances: " Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+        <TextBox x:Name="entrancesBox" Grid.Column="1" Grid.Row="5" Margin="10" Height="20" Width="150"  TextWrapping="NoWrap" />
+    </Grid>
+</Page>

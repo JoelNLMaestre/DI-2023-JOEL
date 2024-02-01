@@ -1,0 +1,8 @@
+C:\Users\DAM02\source\repos\Proyect_Community\Proyect_Community\obj\Debug\Proyect_Community.csproj.AssemblyReference.cache
+C:\Users\DAM02\source\repos\Proyect_Community\Proyect_Community\obj\Debug\View\MainWindow.g.cs
+C:\Users\DAM02\source\repos\Proyect_Community\Proyect_Community\obj\Debug\View\Page1.g.cs
+C:\Users\DAM02\source\repos\Proyect_Community\Proyect_Community\obj\Debug\View\Page2.g.cs
+C:\Users\DAM02\source\repos\Proyect_Community\Proyect_Community\obj\Debug\View\Page3.g.cs
+C:\Users\DAM02\source\repos\Proyect_Community\Proyect_Community\obj\Debug\App.g.cs
+C:\Users\DAM02\source\repos\Proyect_Community\Proyect_Community\obj\Debug\Proyect_Community_MarkupCompile.cache
+C:\Users\DAM02\source\repos\Proyect_Community\Proyect_Community\obj\Debug\Proyect_Community_MarkupCompile.lref
