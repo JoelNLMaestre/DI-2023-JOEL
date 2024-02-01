@@ -37,6 +37,7 @@ namespace Comunity_Proyect.Persistence.Manage
                 numeroPiso = rnd.Next(0, limitePisos);
                 if (pisosOcupados[numeroPiso] < 4)
                 {
+                    
                     DBBroker dBbroker = DBBroker.obtenerAgente();
                     dBbroker.modificar("Insert into pisos_propietarios (idPisos,idPropietarios) values (" + (numeroPiso + 1) + " , " + i + ")");
                     pisosOcupados[numeroPiso]++;

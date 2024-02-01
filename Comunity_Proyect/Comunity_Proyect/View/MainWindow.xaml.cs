@@ -55,17 +55,14 @@ namespace Comunity_Proyect
                 com.leasable = Int32.Parse(page1.areaBox.Text.ToString());
                 if (page1.opcionListBox.SelectedIndex == 0)
                 {
-                    com.pool = true;
+                    com.pool = "yes";
                 }
                 else
                 {
-                    com.pool = false;
+                    com.pool = "no";
                 }
 
                 com.entrances = Int32.Parse(page1.entrancesBox.Text);
-                com.cm.insertComunidad(com);
-                
-                
             }
             catch (Exception ex)
             {
@@ -146,6 +143,7 @@ namespace Comunity_Proyect
             page2.finalLetterBox.Clear();
             page3 = new Page3();
             frameContenedor.Navigate(page3);
+            com.cm.insertComunidad(com);
         }
     }
 }
