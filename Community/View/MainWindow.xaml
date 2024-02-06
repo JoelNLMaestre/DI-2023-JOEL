@@ -1,0 +1,32 @@
+﻿<Window x:Class="Community.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Community"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="COMMUNITINATOR 3000" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" FontSize="30"></TextBlock>
+        <TabControl TabStripPlacement="Left" Grid.Row="1">
+            <TabItem Header="Generate">
+                <Frame x:Name="frameContenedor" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+            </TabItem>
+            <TabItem Header="Report">
+                <Frame x:Name="frameInforme"></Frame>
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="backBttn" Content="Back" Width="90" Height="30" Margin="15" Grid.Row="2" Visibility="Hidden" Click="backBttn_Click"/>
+            <Button x:Name="nextBttn" Content="Next" Width="90" Height="30"  Margin="15" Grid.Row="2" Visibility="Hidden" Click="nextBttn_Click"/>
+            <Button x:Name="finishBttn" Content="Finish" Width="90" Height="30"  Margin="15" Grid.Row="2" Visibility="Hidden" Click="finishBttn_Click"/>
+            <Button x:Name="generateBttn" Content="Generate" Width="90" Height="30" HorizontalAlignment="Center" Margin="15" Grid.Row="2" Click="generateBttn_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

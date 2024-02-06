@@ -1,0 +1,35 @@
+﻿<Page x:Class="Community.View.Page3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Community.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page3">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="gatekeeper" HorizontalAlignment="Center"  VerticalAlignment="Center" Content="GateKeeper's apartment" Grid.Row="0" Click="gatekeeper_Checked"/>
+        <Button x:Name="showers" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Communal Showers and Toilets" Grid.Row="1" Click="showers_Checked"/>
+        <Button x:Name="playarea" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Communal Play Area" Grid.Row="2" Click="gatekeeper_Checked"/>
+        <Button x:Name="exercisearea" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Communal Exercise Area" Grid.Row="3" Click="exercisearea_Checked"/>
+        <Button x:Name="meetingroom" HorizontalAlignment="Center" VerticalAlignment="Center" Content="COmmunal Meeting and Social Room" Grid.Row="4" Click="meetingroom_Checked"/>
+        <Button x:Name="tennis" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Communal Tennis court" Grid.Row="5" Click="tennis_Checked"/>
+        <Button x:Name="padel" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Communal Padel court" Grid.Row="6" Click="padel_Checked"/>
+        <Button x:Name="finalizarCominidad" Content="Finish" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7" Width="100" Height="30" Click="finalizarCominidad_Click"/>
+        
+    </Grid>
+</Page>
